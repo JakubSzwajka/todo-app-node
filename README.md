@@ -1,46 +1,75 @@
+# Todo App
 
-1. Learn the basics of Node.js:
+A simple Todo app built with Node.js, Express, TypeScript, and Prisma for learning purposes.
 
-- Familiarize yourself with the Node.js runtime environment
-- Understand the Node.js module system (CommonJS)
-- Learn about the built-in modules (e.g., fs, http, path, url)
-- Study Node.js' asynchronous programming concepts (callbacks, promises, async/await)
-- Explore the event-driven architecture and the EventEmitter class
-  
-2. Understand Express.js:
+## Features
 
-- Learn the basics of Express.js, a popular web framework for Node.js
-- Understand routing, middleware, and request/response handling
-- Compare Express.js concepts to Django and FastAPI equivalents
-- Build a simple API using Express.js
+- Create, read, update, and delete Todo items
+- RESTful API with Express.js
+- PostgreSQL database
+- Prisma ORM for database interaction
+- TypeScript for better type safety and developer experience
 
-3. Learn about Node.js ecosystem and tools:
+## Getting Started
 
-- Get to know the popular Node.js package manager: npm (or yarn)
-- Understand the package.json file and dependency management
-- Learn about popular Node.js packages like axios, lodash, and moment
-- Set up a development environment using tools like nodemon, eslint, and prettier
+### Prerequisites
 
-4. Integrate with databases:
+- Node.js (v14+)
+- PostgreSQL (v12+)
+- npm (v6+)
 
-- Learn about popular Node.js ORMs/ODMs like Sequelize (SQL) and Mongoose (MongoDB)
-- Compare them with Django ORM and SQLAlchemy (FastAPI)
-- Connect to a database and perform CRUD operations in a Node.js application
+### Installation
 
-5. Authentication and Authorization:
+1. Clone the repository:
 
-- Understand authentication strategies (e.g., JWT, Passport.js)
-- Learn how to implement user registration, login, and access control in a Node.js app
-- Compare the approaches with Django's authentication system and FastAPI's security utilities
+```
+git clone https://github.com/yourusername/todo.git
+```
 
-6. Deployment and scaling:
+2. Change into the project directory:
 
-- Learn about deploying a Node.js app on popular platforms like Heroku, AWS, and Digital Ocean
-- Understand how to use reverse proxies (e.g., Nginx) for load balancing and SSL termination
-- Learn about Node.js clustering for horizontal scaling
+```
+cd todo
 
-7. Combine Node.js with your React knowledge:
+```
 
-- Set up a project with Node.js as a backend and React as a frontend
-- Learn how to make API calls from the React app to the Node.js backend
-- Understand best practices for structuring full-stack projects
+3. Install the dependencies:
+
+```
+npm install
+```
+
+4. Set up your environment variables:
+
+Copy the `.env.example` file to a new file named `.env` and replace the placeholders with your actual values:
+
+```
+cp .env.example .env
+
+```
+
+5. Run the development server:
+   
+```
+npm run start
+```
+
+Your Todo app is now running on `http://localhost:3000`.
+
+## API Endpoints
+
+| Method | Endpoint         | Description         |
+| ------ | ---------------- | ------------------- |
+| GET    | /api/todos       | Get all Todo items  |
+| POST   | /api/todos       | Create a new Todo   |
+| GET    | /api/todos/:id   | Get a specific Todo |
+| PUT    | /api/todos/:id   | Update a Todo       |
+| DELETE | /api/todos/:id   | Delete a Todo       |
+
+## License
+
+This project is licensed under the ISC License.
+
+## Author
+
+Jakub Szwajka - szwajkajakub@gmail.com
