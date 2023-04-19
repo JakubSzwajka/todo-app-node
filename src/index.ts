@@ -11,7 +11,7 @@ const port = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
-app.use('/todos', todoRouter);
+app.use('/api', todoRouter);
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);

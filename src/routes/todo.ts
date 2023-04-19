@@ -1,25 +1,12 @@
 import express from 'express';
+import { createTodo, getTodos } from '../services/todo';
 
 const router = express.Router();
-
-
-import prisma from '../prismaClient';
-
-async function createTodo(title: string) {
-  const newTodo = await prisma.todo.create({
-    data: {
-      title: title,
-    },
-  });
-
-  return newTodo;
-}
-
 
 // GET /todos
 router.get('/', async (req, res) => {
 	try {
-		const todos = await prisma.todo.findMany();
+		const todos = await getTodos();
 		res.json(todos);
 	} catch (err) {
 		res.status(500).json({ error: (err as Error).message });

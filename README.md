@@ -30,7 +30,6 @@ git clone https://github.com/yourusername/todo.git
 
 ```
 cd todo
-
 ```
 
 3. Install the dependencies:
@@ -45,11 +44,10 @@ Copy the `.env.example` file to a new file named `.env` and replace the placehol
 
 ```
 cp .env.example .env
-
 ```
 
 5. Run the development server:
-   
+
 ```
 npm run start
 ```
