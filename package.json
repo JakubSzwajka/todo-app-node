@@ -4,13 +4,14 @@
   "description": "todo app for node learning purposes",
   "main": "index.ts",
   "scripts": {
-    "build": "tsc",
-    "start": "tsc && nodemon dist/index.js",
+    "build": "npx tsc",
+    "start": "npx tsc && nodemon dist/index.js",
     "test": "test"
   },
   "author": "szwajkajakub@gmail.com",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^4.13.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
@@ -25,6 +26,7 @@
     "@types/node": "^18.15.11",
     "@types/sequelize": "^4.28.14",
     "nodemon": "^2.0.22",
+    "prisma": "^4.13.0",
     "sequelize-cli": "^6.6.0",
     "typescript": "^5.0.4"
   }

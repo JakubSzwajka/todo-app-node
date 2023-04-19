@@ -1,3 +1,6 @@
+compile:
+	npx tsc
+
 make-migrations:
 	npx sequelize-cli migration:generate --name create-todo
 

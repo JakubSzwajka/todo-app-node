@@ -1,12 +1,25 @@
 import express from 'express';
-import { Todo } from '../models/Todo';
 
 const router = express.Router();
+
+
+import prisma from '../prismaClient';
+
+async function createTodo(title: string) {
+  const newTodo = await prisma.todo.create({
+    data: {
+      title: title,
+    },
+  });
+
+  return newTodo;
+}
+
 
 // GET /todos
 router.get('/', async (req, res) => {
 	try {
-		const todos = await Todo.findAll();
+		const todos = await prisma.todo.findMany();
 		res.json(todos);
 	} catch (err) {
 		res.status(500).json({ error: (err as Error).message });
@@ -16,7 +29,7 @@ router.get('/', async (req, res) => {
 // POST /todos
 router.post('/', async (req, res) => {
 	try {
-		const todo = await Todo.create(req.body);
+        const todo = await createTodo(req.body.title);
 		res.json(todo);
 	} catch (err) {
 		res.status(500).json({ error: (err as Error).message });
